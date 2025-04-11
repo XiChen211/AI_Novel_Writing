@@ -80,7 +80,7 @@ This is a desktop application built with Python and PyQt5, designed to assist us
     *   To use a different model (e.g., `gemini-1.5-pro-latest`), edit `GEMINI_MODEL_NAME` in `config.py`. Ensure your API key has access.
 
 ---
-## 📂 File Structure (Key Files)
+## 📂 File Structure
 
 
     AI_Novel_Writing/
@@ -249,8 +249,10 @@ This guide walks you through using the application to generate and write your no
 ### Phase 5: 💾 Maintenance & Saving
 
 *   **Save Project:** Regularly use the **`File`** -> **`Save Project`** menu option. This saves the *entire state* of your project (settings, core seed, characters, world, plot, blueprints, drafts, summaries, character state) to a single project file (often a `.json` file). **Do this frequently to avoid losing work!**
+  
     ![Application Screenshot](./image/11.png)
 *   **Load Project:** Use **`File`** -> **`Load Project`** to open a previously saved project file and resume your work exactly where you left off.
+  
     ![Application Screenshot](./image/12.png)
 *   **Iterate & Revise:** Writing is rewriting! After completing a first draft using the steps above, you can go back through the chapters. Load each chapter individually (Phase 4, Step 1), edit it further (Phase 4, Step 6), save the revised draft (Phase 4, Step 7), and update the context (Phase 4, Step 8) to reflect major revisions before moving to the next chapter for editing.
 
