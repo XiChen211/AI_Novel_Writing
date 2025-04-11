@@ -257,3 +257,5 @@ This guide walks you through using the application to generate and write your no
 *   **Iterate & Revise:** Writing is rewriting! After completing a first draft using the steps above, you can go back through the chapters. Load each chapter individually (Phase 4, Step 1), edit it further (Phase 4, Step 6), save the revised draft (Phase 4, Step 7), and update the context (Phase 4, Step 8) to reflect major revisions before moving to the next chapter for editing.
 
 ---
+## 🤝 Contributing
+Contributions, bug reports, and feature suggestions are welcome! Please use GitHub Issues or Pull Requests.
