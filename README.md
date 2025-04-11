@@ -1,4 +1,4 @@
-# AI_Novel_Writing (PyQt5 & Gemini API)
+# AI_Novel_Writing
 
 This is a desktop application built with Python and PyQt5, designed to assist users in brainstorming, planning, and drafting novels by leveraging the power of the Google Gemini API, combined with writing methodologies like the Snowflake Method, Character Arc theory, and suspense elements.
 
@@ -21,10 +21,9 @@ This is a desktop application built with Python and PyQt5, designed to assist us
 
 ## 📸 Screenshots (Example)
 
-*(Add screenshots of your application's main interface here)*
 
-![Screenshot 1](docs/images/screenshot_main.png)
-![Screenshot 2](docs/images/screenshot_writing.png)
+![Application Screenshot](./image/1.png)
+![Application Screenshot](./image/9.png)
 ...
 
 ---
@@ -41,7 +40,7 @@ This is a desktop application built with Python and PyQt5, designed to assist us
 
 ## 📋 Prerequisites
 
-*   Python 3.6+
+*   Python 3.12
 *   pip (Python Package Installer)
 *   A valid Google Gemini API Key (obtainable from Google AI Studio)
 *   Internet connection to access Google APIs
@@ -57,9 +56,9 @@ This is a desktop application built with Python and PyQt5, designed to assist us
     ```
 
 2.  **Create a virtual environment (Recommended):**
-    ```bash
-   conda create -n novel python=3.12
-   conda activate novel
+     ```bash
+    conda create -n novel python=3.12
+    conda activate novel
     ```
 
 3.  **Install dependencies:**
@@ -77,7 +76,7 @@ This is a desktop application built with Python and PyQt5, designed to assist us
     *   **Important:** Add `.env` to your `.gitignore` file. **DO NOT** commit your API key!
 
 5.  **Select Gemini Model (Optional):**
-    *   Default: `gemini-1.5-flash-latest`.
+    *   Default: `gemini-2.0-flash`.
     *   To use a different model (e.g., `gemini-1.5-pro-latest`), edit `GEMINI_MODEL_NAME` in `config.py`. Ensure your API key has access.
 
 ---
@@ -112,13 +111,12 @@ This guide walks you through using the application to generate and write your no
     *   Fill in the **`Novel Theme`** field (e.g., "A detective investigating memory implants in a cyberpunk city").
     *   Fill in the **`Novel Genre`** field (e.g., "Sci-Fi Mystery").
     *   Adjust **`Target Chapters`** and **`Words per Chapter`** if you have specific goals different from the defaults.
-    ![image](docs/images/step1_setup.png)
 
 2.  **Generate Core Seed:**
     *   Click the **`1. Generate Core Seed...`** button.
     *   Wait for the AI to process. The result (a concise, single-sentence summary) will appear in the **`Core Seed`** text box below.
     *   **Review:** Does the Core Seed accurately capture the essence of your intended story? If not, refine your `Novel Theme` and `Novel Genre` and click the button again.
-    ![Generated Core Seed](docs/images/step2_core_seed.png)
+    ![Application Screenshot](./image/1.png)
 
 ---
 
@@ -127,34 +125,30 @@ This guide walks you through using the application to generate and write your no
 *(Requires a generated Core Seed from Phase 1)*
 
 1.  **Provide Guidance (Optional but Recommended):**
-    *   In the **`User Guidance (Optional)`** text box on the left side of this tab, add any specific constraints or desires for your characters, world, or plot. Examples:
-        *   "Protagonist must be female and a skilled hacker."
-        *   "The world needs a unique magic system based on sound frequencies."
-        *   "Include a major betrayal plot point midway through the story."
-    ![User Guidance Input](docs/images/step3_guidance.png)
+    *   In the **`User Guidance (Optional)`** text box on the left side of this tab, add any specific constraints or desires for your characters, world, or plot. 
 
 2.  **Generate Characters:**
     *   Click the **`2. Generate Character Dynamics`** button.
     *   The results will appear in the **`Character Dynamics`** tab on the right.
     *   **Review:** Examine the generated characters, their descriptions, motivations, arcs, and relationships. If they don't align with your vision, refine the `User Guidance` and regenerate.
-    ![Generated Characters](docs/images/step4_characters.png)
+    ![Application Screenshot](./image/2.png)
 
 3.  **Generate World:**
     *   Click the **`3. Generate World Building Matrix`** button.
     *   The results will appear in the **`World Building`** tab on the right.
     *   **Review:** Explore the physical, social, and metaphorical dimensions of the generated world. Does it fit the genre and theme? Regenerate with refined guidance if needed.
-    ![Generated World Building](docs/images/step5_world.png)
+    ![Application Screenshot](./image/3.png)
 
 4.  **Generate Plot:**
     *   Click the **`4. Generate Plot Architecture`** button.
     *   The results will appear in the **`Plot Architecture`** tab on the right.
     *   **Review:** Analyze the proposed three-act structure, key events, inciting incident, climax, and turning points. Does the overall plot structure make sense? Regenerate if necessary.
-    ![Generated Plot Architecture](docs/images/step6_plot.png)
+    ![Application Screenshot](./image/4.png)
 
 5.  **Initialize Character State:**
     *   Click the **`Initialize Character State`** button.
     *   This action creates the initial `Character State` document based on the generated character dynamics. You can view this document in the **`Character State`** tab (usually found in Tab 4 or accessible via the main interface).
-    ![Initialized Character State](docs/images/step7_char_state.png)
+    ![Application Screenshot](./image/5.png)
 
 ---
 
@@ -169,12 +163,11 @@ This guide walks you through using the application to generate and write your no
     *   **Full Generation:** Click **`Generate Chapter Blueprint (Full - Overwrite!)`** to create summaries/outlines for *all* chapters defined by the `Target Chapters` setting based on the `Plot Architecture`. This will overwrite any existing blueprint data.
     *   **Chunked Generation:** Select a starting and ending chapter number in the range selectors and click **`Generate/Overwrite Specified Range Blueprint`**. This generates blueprints only for the selected range. *(Note: This method typically relies only on the Plot Architecture and doesn't use summaries of previously written content).*
     *   **Regenerate Subsequent (Recommended for Continuation):** If you have already written some chapters (e.g., Chapters 1-5), select the *next* chapter number (e.g., 6) in the range selector. Then click **`Regenerate Subsequent Blueprints...`**. This powerful option first analyzes and summarizes your *already written* chapters (1-5) and then generates blueprints for the remaining chapters (6 onwards) based on both the original plot architecture *and* the summarized events of the written content, ensuring better continuity.
-    ![Blueprint Generation Controls](docs/images/step8_blueprint_controls.png)
 
 3.  **Review Blueprint:**
     *   Examine the generated list of chapter summaries/outlines in the **`Chapter Directory`** box.
     *   **Review:** Check the flow, pacing, and logical progression of events from chapter to chapter. Ensure key plot points from the `Plot Architecture` are included appropriately.
-    ![Chapter Blueprint List](docs/images/step9_blueprint_list.png)
+    ![Application Screenshot](./image/6.png)
 
 ---
 
@@ -186,7 +179,7 @@ This guide walks you through using the application to generate and write your no
     *   Choose the chapter number you want to work on using the chapter selector (e.g., a dropdown or number input).
     *   Click the **`Load Chapter Data`** button.
     *   This will load the corresponding chapter blueprint, any previously saved draft for this chapter, and update the context panes (like **`Global Summary`**, **`Previous Excerpt`**, **`Character State`**) with relevant information.
-    ![Loading Chapter Data](docs/images/step10_load_chapter.png)
+    ![Application Screenshot](./image/7.png)
 
 2.  **Review Context:**
     *   Carefully read the loaded chapter blueprint/summary.
@@ -197,7 +190,7 @@ This guide walks you through using the application to generate and write your no
     *   Click **`Generate Knowledge Base Keywords`** to identify key terms for research relevant to this chapter.
     *   Paste any relevant research notes, world details, or specific information into the **`Knowledge Base Input`** box.
     *   Click **`Filter Knowledge Base Content`**. The system filters your input based on the generated keywords, presenting the most relevant snippets in the **`Filtered Knowledge`** pane for the AI to use.
-    ![Generating Chapter Context](docs/images/step11_chapter_context.png)
+    
 
 4.  **Add Chapter-Specific Guidance:**
     *   Enter any specific instructions, desired dialogue snippets, scene requirements, or stylistic notes for *this particular chapter* into the **`User Guidance (This Chapter)`** text box.
@@ -206,7 +199,7 @@ This guide walks you through using the application to generate and write your no
     *   Click the **`Generate Chapter Draft`** button.
     *   The AI will now attempt to write a draft of the chapter, utilizing all the context provided: the blueprint, global summary, previous excerpt, character state, filtered knowledge, and your specific guidance.
     *   The generated draft will appear in the main text editor area below the controls.
-    ![Generating Chapter Draft](docs/images/step12_generate_draft.png)
+    ![Application Screenshot](./image/8.png)
 
 6.  **Review & Edit (❗ Crucial Step!):**
     *   **Critically read** the AI-generated draft. It's a starting point, not a final product.
@@ -218,17 +211,17 @@ This guide walks you through using the application to generate and write your no
         *   Ensuring character voices and actions are consistent.
         *   Checking for continuity errors.
     *   Use the **`Enlarge/Edit View`** button (if available) for a larger, more comfortable editing window. Remember to **`Save & Close`** the dialog to apply changes back to the main editor.
-    ![Editing the Draft](docs/images/step13_edit_draft.png)
+
 
 7.  **Save Draft:**
     *   Once you are reasonably satisfied with the draft (it doesn't need to be perfect yet, just substantially improved), click the **`Save Draft to Data`** button.
     *   This action saves the current text in the editor to the application's project data structure and typically also exports a plain text (`.txt`) version of the chapter to a designated `chapters/` folder in your project directory for easy access.
-    ![Saving the Draft](docs/images/step14_save_draft.png)
+      ![Application Screenshot](./image/9.png)
+    
 
 8.  **Update Context (After Saving Draft):**
     *   Click the **`Update Global Summary`** button. This incorporates the events of the chapter you just saved into the overall story summary, keeping the context current for future chapter generation.
     *   Click the **`Update Character State`** button. This analyzes the saved chapter for significant changes in character relationships, status, knowledge, or location and updates the character state document accordingly.
-    ![Updating Context Summaries](docs/images/step15_update_context.png)
 
 9.  **Proceed to Next Chapter:**
     *   Increment the chapter number selector to the next chapter you want to write.
@@ -239,6 +232,7 @@ This guide walks you through using the application to generate and write your no
 ### Phase 5: 💾 Maintenance & Saving
 
 *   **Save Project:** Regularly use the **`File`** -> **`Save Project`** menu option. This saves the *entire state* of your project (settings, core seed, characters, world, plot, blueprints, drafts, summaries, character state) to a single project file (often a `.json` file). **Do this frequently to avoid losing work!**
+    ![Application Screenshot](./image/10.png)
 *   **Load Project:** Use **`File`** -> **`Load Project`** to open a previously saved project file and resume your work exactly where you left off.
 *   **Iterate & Revise:** Writing is rewriting! After completing a first draft using the steps above, you can go back through the chapters. Load each chapter individually (Phase 4, Step 1), edit it further (Phase 4, Step 6), save the revised draft (Phase 4, Step 7), and update the context (Phase 4, Step 8) to reflect major revisions before moving to the next chapter for editing.
 
