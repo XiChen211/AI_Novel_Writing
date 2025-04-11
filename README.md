@@ -80,6 +80,22 @@ This is a desktop application built with Python and PyQt5, designed to assist us
     *   To use a different model (e.g., `gemini-1.5-pro-latest`), edit `GEMINI_MODEL_NAME` in `config.py`. Ensure your API key has access.
 
 ---
+## 📂 File Structure (Key Files)
+
+
+    AI_Novel_Writing/
+    ├── .env                  # Stores API Key (DO NOT COMMIT)
+    ├── chapters/             # Auto-saved chapter .txt files
+    ├── config.py             # API key loading & model config
+    ├── gemini_client.py      # Gemini API interaction class
+    ├── main.py               # Application entry point
+    ├── main_window.py        # Main window UI and logic
+    ├── novel_data.py         # Class for storing & managing novel data
+    ├── prompt.py             # All prompt definitions
+    ├── prompt_loader.py      # Module for loading prompts
+    ├── requirements.txt      # Project dependencies
+    └── novel_assistant.log   # Log file
+---
 
 ## 🚀 How to Run
 
@@ -147,7 +163,7 @@ This guide walks you through using the application to generate and write your no
 
 5.  **Initialize Character State:**
     *   Click the **`Initialize Character State`** button.
-    *   This action creates the initial `Character State` document based on the generated character dynamics. You can view this document in the **`Character State`** tab (usually found in Tab 4 or accessible via the main interface).
+    *   This action creates the initial `Character State` document based on the generated character dynamics. You can view this document in the **`Character State`** tab.
     ![Application Screenshot](./image/5.png)
 
 ---
@@ -210,7 +226,7 @@ This guide walks you through using the application to generate and write your no
         *   Removing redundant sentences or awkward phrasing.
         *   Ensuring character voices and actions are consistent.
         *   Checking for continuity errors.
-    *   Use the **`Enlarge/Edit View`** button (if available) for a larger, more comfortable editing window. Remember to **`Save & Close`** the dialog to apply changes back to the main editor.
+    *   Use the **`Enlarge/Edit View`** button for a larger, more comfortable editing window. Remember to **`Save & Close`** the dialog to apply changes back to the main editor.
 
 
 7.  **Save Draft:**
@@ -222,6 +238,7 @@ This guide walks you through using the application to generate and write your no
 8.  **Update Context (After Saving Draft):**
     *   Click the **`Update Global Summary`** button. This incorporates the events of the chapter you just saved into the overall story summary, keeping the context current for future chapter generation.
     *   Click the **`Update Character State`** button. This analyzes the saved chapter for significant changes in character relationships, status, knowledge, or location and updates the character state document accordingly.
+      ![Application Screenshot](./image/10.png)
 
 9.  **Proceed to Next Chapter:**
     *   Increment the chapter number selector to the next chapter you want to write.
@@ -232,8 +249,9 @@ This guide walks you through using the application to generate and write your no
 ### Phase 5: 💾 Maintenance & Saving
 
 *   **Save Project:** Regularly use the **`File`** -> **`Save Project`** menu option. This saves the *entire state* of your project (settings, core seed, characters, world, plot, blueprints, drafts, summaries, character state) to a single project file (often a `.json` file). **Do this frequently to avoid losing work!**
-    ![Application Screenshot](./image/10.png)
+    ![Application Screenshot](./image/11.png)
 *   **Load Project:** Use **`File`** -> **`Load Project`** to open a previously saved project file and resume your work exactly where you left off.
+    ![Application Screenshot](./image/12.png)
 *   **Iterate & Revise:** Writing is rewriting! After completing a first draft using the steps above, you can go back through the chapters. Load each chapter individually (Phase 4, Step 1), edit it further (Phase 4, Step 6), save the revised draft (Phase 4, Step 7), and update the context (Phase 4, Step 8) to reflect major revisions before moving to the next chapter for editing.
 
 ---
