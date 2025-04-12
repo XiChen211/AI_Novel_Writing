@@ -65,9 +65,18 @@ This is a desktop application built with Python and PyQt5, designed to assist us
     ```bash
     pip install -r requirements.txt
     ```
-
-4.  **Configure API Key:**
+4.  **Get Gemini API Key:**
+    *   In Google AI Studio, locate and click the **`Get API key`** button. This is typically found in the top-right corner or sometimes in a left-hand menu.
+    ![Application Screenshot](./image/google1.png)
+    *   On the subsequent screen or pop-up, click the main blue button, likely labeled **`Create API key`**.
+    *   A modal titled "Create API key" will appear (as shown in your first screenshot). Use the search bar (**`Search Google Cloud projects`**) to find and select the existing Google Cloud project you wish to associate this key with (e.g., `Gemini API`, `gen-lang-client-...`).
+    *   Once the project is selected, click the blue button at the bottom of the modal, labeled **`Create API key in existing project`**.
+    ![Application Screenshot](./image/google2.png)
+    *   Your API key will be generated and displayed. 
+  
+5.  **Configure API Key:**
     *   Create a file named `.env` in the project root directory (same level as `main.py`).
+        
     *   Add your Gemini API Key to this file:
         ```dotenv
         GEMINI_API_KEY=YOUR_API_KEY_HERE
@@ -75,7 +84,7 @@ This is a desktop application built with Python and PyQt5, designed to assist us
         *(Replace `YOUR_API_KEY_HERE` with your actual key)*
     *   **Important:** Add `.env` to your `.gitignore` file. **DO NOT** commit your API key!
 
-5.  **Select Gemini Model (Optional):**
+6.  **Select Gemini Model (Optional):**
     *   Default: `gemini-2.0-flash`.
     *   To use a different model (e.g., `gemini-1.5-pro-latest`), edit `GEMINI_MODEL_NAME` in `config.py`. Ensure your API key has access.
 
